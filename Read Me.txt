@@ -1,2 +1,2 @@
-All the main.py are my solution
+All the main.py or task.py are my solution
 solution.py is the course solution
