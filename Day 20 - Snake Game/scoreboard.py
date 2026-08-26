@@ -32,3 +32,4 @@ class Scoreboard(Turtle):
     def high_score_storage(self):
         file = open("data.txt", "w")
         file.write(f"{self.high_score}")
+        file.close()
