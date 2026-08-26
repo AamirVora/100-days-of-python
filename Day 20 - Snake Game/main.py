@@ -1,5 +1,4 @@
 import time
-import turtle
 from turtle import Screen
 from snake import Snake
 from food import Food
@@ -33,18 +32,15 @@ while game_on:
         scoreboard.increase_score()
 
     if snake.turtle_head.xcor() > 280 or snake.turtle_head.xcor() < -280 or snake.turtle_head.ycor() < -280 or snake.turtle_head.ycor() > 280:
-        game_on = False
-        turtle.color("white")
-        turtle.write("Game Over", align="center", font=("Courier", 15, "normal"))
+        scoreboard.reset()
+        snake.reset()
 
     for square in snake.squares:
         if square == snake.turtle_head:
             pass
         elif snake.turtle_head.distance(square) < 10:
-            game_on = False
-            turtle.color("white")
-            turtle.write("Game Over", align="center", font=("Courier", 15, "normal"))
-
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()
 

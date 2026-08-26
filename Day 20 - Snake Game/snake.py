@@ -38,6 +38,13 @@ class Snake:
 
         self.turtle_head.fd(self.MOVE_SPEED)
 
+    def reset(self):
+        for square in self.squares:
+            square.goto(1000,1000)
+        self.squares.clear()
+        self.create_snake()
+        self.turtle_head = self.squares[0]
+
 
     def up(self):
         if self.turtle_head.heading() != self.DOWN:
